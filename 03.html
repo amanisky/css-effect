@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>图片旋转消失显示介绍</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: #262626;
+    }
+    .image-box {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 300px;
+      height: 300px;
+      transform: translate(-50%, -50%);
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, .2);
+    }
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transition: all .5s ease-in-out;
+      opacity: 1;
+    }
+    .image-box:hover img {
+      opacity: 0;
+      transform: scale(0) rotate(180deg);
+    }
+    p {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 24px;
+      color: #fff;
+      padding: 20px;
+      background-color: #ff5722;
+      opacity: 0;
+      transform: scale(0);
+      transition: all .5s ease-in-out .2s;
+    }
+    .image-box:hover p {
+      opacity: 1;
+      transform: scale(1);
+    }
+  </style>
+</head>
+<body>
+  <div class="image-box">
+    <img src="https://picsum.photos/id/237/300/300" alt="图片">
+    <p>我是一只威武的狗,长着锋利得像小刀一样的牙齿。我还长着嗅觉灵敏的鼻子,它能分出各种各样气味。听觉灵敏的耳朵,它听到奇怪的声音后。我就会汪汪的叫起来。还有大大的眼睛,它像一个小黑珠子。我的尾巴是翘着的,它可以帮助人类分辨我的远亲狼。我披着乌黑的毛,像乌黑的毯子一样。我的四肢健壮,所以速度很快,它能帮我捕捉一些猎物。</p>
+  </div>
+</body>
+</html>
