@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>图片旋转消失显示介绍</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: #262626;
+    }
+    .box {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 400px;
+      height: 300px;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      overflow: hidden;
+    }
+    .img-box {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transition: .5s;
+      overflow: hidden;
+    }
+    .img-box img {
+      display: block;
+      width: 100%;
+    }
+    .content-box {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 100%;
+      padding: 30px 20px;
+      transform-origin: left;
+      transform: perspective(600px) rotateY(90deg);
+      transition: .5s;
+      background-color: #1d304c;
+      z-index: 2;
+    }
+    .content-box h1 {
+      color: #fff;
+      font-size: 24px;
+    }
+    .content-box p {
+      color: #fff;
+      line-height: 24px;
+      margin-top: 20px;
+    }
+    .box:hover .img-box {
+      transform: translateX(50%);
+    }
+    .box:hover .content-box {
+      transform: perspective(600px) rotateY(0);
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="img-box">
+      <img src="https://picsum.photos/id/237/400/300" alt="图片">
+    </div>
+    <div class="content-box">
+      <h1>威武的狗</h1>
+      <p>我是一只威武的狗,长着锋利得像小刀一样的牙齿。</p>
+    </div>
+  </div>
+</body>
+</html>
